@@ -207,7 +207,7 @@ def fetch_polymarket_nba() -> list:
                 "closed": "false",
                 "tag_slug": "nba",
                 "order": "startDate",
-                "ascending": "false",
+                "ascending": "true",
             }
             resp = requests.get(POLYMARKET_API_URL, params=params, timeout=15)
             resp.raise_for_status()
