@@ -16,7 +16,7 @@ from pathlib import Path
 
 ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
 ODDS_API_URL = "https://api.the-odds-api.com/v4/sports/basketball_nba/odds"
-POLYMARKET_API_URL = "https://gamma-api.polymarket.com/markets"
+POLYMARKET_API_URL = "https://gamma-api.polymarket.com/events"
 ESPN_SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
 ESPN_STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings"
 
@@ -191,20 +191,21 @@ def fetch_pinnacle_odds() -> list:
 
 def fetch_polymarket_nba() -> list:
     """
-    Fetch Polymarket NBA win/loss markets from gamma-api.
-    Returns list of market dicts with parsed win probabilities.
+    Fetch Polymarket NBA game markets from gamma-api events endpoint.
+    Returns list of dicts with team names and win probabilities.
     """
-    all_markets = []
+    all_events = []
     offset = 0
     limit = 100
 
     try:
-        while offset <= 500:
+        while offset <= 300:
             params = {
                 "limit": limit,
                 "offset": offset,
                 "active": "true",
                 "closed": "false",
+                "tag_slug": "nba",
                 "order": "startDate",
                 "ascending": "false",
             }
@@ -213,7 +214,7 @@ def fetch_polymarket_nba() -> list:
             batch = resp.json()
             if not batch:
                 break
-            all_markets.extend(batch)
+            all_events.extend(batch)
             if len(batch) < limit:
                 break
             offset += limit
@@ -221,28 +222,23 @@ def fetch_polymarket_nba() -> list:
         print(f"[ERROR] Polymarket fetch failed: {e}")
         return []
 
-    # Short team name keywords for matching
-    team_shorts = [name.split()[-1] for name in TEAM_NAMES.keys()]
-    team_shorts += ["76ers", "Blazers", "Clippers", "Lakers"]
-
     nba_markets = []
-    for m in all_markets:
-        question = m.get("question", "") or ""
-        # Must contain an NBA team name
-        if not any(t in question for t in team_shorts):
-            continue
-        # Skip Over/Under markets
-        if any(skip in question for skip in ["O/U", "Over", "Under", "1H", "Half", "Quarter", "Spread", "ATS"]):
+    for event in all_events:
+        title = event.get("title", "") or ""
+        # Skip non-game events (Champion, MVP, etc.)
+        if "vs." not in title and " vs " not in title:
             continue
 
-        # Try to get win probability
-        # Method 1: outcomePrices field (binary market Yes/No)
-        price = None
-        outcomes = []
-        try:
-            outcome_prices_raw = m.get("outcomePrices")
-            outcomes_raw = m.get("outcomes", "[]")
-            if outcome_prices_raw:
+        markets = event.get("markets", [])
+        for m in markets:
+            question = m.get("question", "") or ""
+            # Only moneyline markets (skip O/U, Spread, etc.)
+            if any(skip in question for skip in ["O/U", "Over", "Under", "1H", "Half", "Quarter", "Spread", "ATS", "+"]):
+                continue
+
+            try:
+                outcome_prices_raw = m.get("outcomePrices", "[]")
+                outcomes_raw = m.get("outcomes", "[]")
                 if isinstance(outcome_prices_raw, str):
                     prices = json.loads(outcome_prices_raw)
                 else:
@@ -252,28 +248,17 @@ def fetch_polymarket_nba() -> list:
                 else:
                     outcomes = list(outcomes_raw)
                 prices = [float(p) for p in prices]
-                if len(prices) >= 1:
-                    price = prices[0]  # Yes/first team price
-        except Exception:
-            pass
-
-        # Method 2: bestAsk field (CLOB order book price)
-        if price is None:
-            try:
-                best_ask = m.get("bestAsk")
-                if best_ask is not None:
-                    price = float(best_ask)
+                if len(prices) < 2:
+                    continue
+                m["_prices"] = prices
+                m["_outcomes"] = outcomes
+                m["_event_title"] = title
+                nba_markets.append(m)
+                break  # one moneyline market per event is enough
             except Exception:
-                pass
+                continue
 
-        if price is None:
-            continue
-
-        m["_win_prob"] = price
-        m["_outcomes"] = outcomes
-        nba_markets.append(m)
-
-    print(f"[INFO] Polymarket: found {len(nba_markets)} NBA win markets.")
+    print(f"[INFO] Polymarket: found {len(nba_markets)} NBA game markets.")
     return nba_markets
 
 
@@ -338,23 +323,24 @@ def find_polymarket_prob(pm_markets: list, home_team: str, away_team: str):
     away_short = away_team.split()[-1]
 
     for m in pm_markets:
-        q = m.get("question", "")
-        home_hit = home_short.lower() in q.lower() or home_team.lower() in q.lower()
-        away_hit = away_short.lower() in q.lower() or away_team.lower() in q.lower()
+        title = m.get("_event_title", "") or m.get("question", "")
+        home_hit = home_short.lower() in title.lower() or home_team.lower() in title.lower()
+        away_hit = away_short.lower() in title.lower() or away_team.lower() in title.lower()
         if not (home_hit and away_hit):
             continue
 
-        prob = m["_win_prob"]
-        outcomes = m.get("_outcomes", [])
+        prices = m["_prices"]       # [team1_prob, team2_prob]
+        outcomes = m["_outcomes"]   # ["Team1", "Team2"]
 
-        # If outcomes tells us which team this is for, verify it's the home team's prob
-        if outcomes and len(outcomes) >= 1:
-            first_outcome = outcomes[0].lower()
-            # If first outcome is clearly the away team, flip probability
-            if away_short.lower() in first_outcome and home_short.lower() not in first_outcome:
-                prob = 1.0 - prob
+        # Find which index corresponds to home team
+        home_idx = 0
+        for i, outcome in enumerate(outcomes):
+            if home_short.lower() in outcome.lower() or home_team.lower() in outcome.lower():
+                home_idx = i
+                break
 
-        return prob, q
+        home_prob = prices[home_idx]
+        return home_prob, title
 
     return None, None
 
