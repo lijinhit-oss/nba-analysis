@@ -459,7 +459,7 @@ def build_analysis_rows(pm_markets: list, pinnacle_data: list, standings_map: di
             "focus_points": focus_points,
         })
 
-    rows.sort(key=lambda r: r["priority_key"], reverse=True)
+    rows.sort(key=lambda r: (-r["priority_key"], r["game_time_bj"]))
     return rows
 
 
@@ -915,7 +915,10 @@ def main():
     # Build analysis rows
     try:
         rows = build_analysis_rows(pm_markets, pinnacle_data, standings_map)
-        print(f"[INFO] Analysis complete: {len(rows)} rows.")
+        # Only show tomorrow's games (Beijing time)
+        tomorrow_bj = (now_bj + timedelta(days=1)).strftime("%m/%d")
+        rows = [r for r in rows if r["game_time_bj"].startswith(tomorrow_bj)]
+        print(f"[INFO] Analysis complete: {len(rows)} rows (tomorrow: {tomorrow_bj}).")
     except Exception:
         rows = []
         traceback.print_exc()
