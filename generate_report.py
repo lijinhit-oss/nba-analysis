@@ -1,6 +1,6 @@
 """
 NBA Daily Analysis Report Generator
-Fetches Pinnacle odds, Polymarket prices, ESPN data and generates HTML report.
+Fetches Pinnacle odds, Polymarket prices, ESPN standings and generates HTML report.
 """
 
 import os
@@ -17,7 +17,6 @@ from pathlib import Path
 ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
 ODDS_API_URL = "https://api.the-odds-api.com/v4/sports/basketball_nba/odds"
 POLYMARKET_API_URL = "https://gamma-api.polymarket.com/events"
-ESPN_SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
 ESPN_STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings"
 
 TEAM_NAMES = {
@@ -51,6 +50,21 @@ TEAM_NAMES = {
     "Toronto Raptors": "猛龙",
     "Utah Jazz": "爵士",
     "Washington Wizards": "奇才",
+}
+
+SHORT_TO_FULL = {
+    "Hawks": "Atlanta Hawks", "Celtics": "Boston Celtics", "Nets": "Brooklyn Nets",
+    "Hornets": "Charlotte Hornets", "Bulls": "Chicago Bulls", "Cavaliers": "Cleveland Cavaliers",
+    "Mavericks": "Dallas Mavericks", "Nuggets": "Denver Nuggets", "Pistons": "Detroit Pistons",
+    "Warriors": "Golden State Warriors", "Rockets": "Houston Rockets", "Pacers": "Indiana Pacers",
+    "Clippers": "LA Clippers", "Lakers": "Los Angeles Lakers", "Grizzlies": "Memphis Grizzlies",
+    "Heat": "Miami Heat", "Bucks": "Milwaukee Bucks", "Timberwolves": "Minnesota Timberwolves",
+    "Wolves": "Minnesota Timberwolves", "Pelicans": "New Orleans Pelicans",
+    "Knicks": "New York Knicks", "Thunder": "Oklahoma City Thunder", "Magic": "Orlando Magic",
+    "76ers": "Philadelphia 76ers", "Suns": "Phoenix Suns",
+    "Trail Blazers": "Portland Trail Blazers", "Blazers": "Portland Trail Blazers",
+    "Kings": "Sacramento Kings", "Spurs": "San Antonio Spurs", "Raptors": "Toronto Raptors",
+    "Jazz": "Utah Jazz", "Wizards": "Washington Wizards",
 }
 
 BEIJING_TZ = timezone(timedelta(hours=8))
@@ -253,6 +267,7 @@ def fetch_polymarket_nba() -> list:
                 m["_prices"] = prices
                 m["_outcomes"] = outcomes
                 m["_event_title"] = title
+                # gameStartTime is already on the market dict; don't overwrite with event.startDate
                 nba_markets.append(m)
                 break  # one moneyline market per event is enough
             except Exception:
@@ -260,19 +275,6 @@ def fetch_polymarket_nba() -> list:
 
     print(f"[INFO] Polymarket: found {len(nba_markets)} NBA game markets.")
     return nba_markets
-
-
-def fetch_espn_scoreboard() -> dict:
-    """Fetch ESPN NBA scoreboard for today. Returns raw JSON or {}."""
-    try:
-        resp = requests.get(ESPN_SCOREBOARD_URL, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-        print(f"[INFO] ESPN scoreboard fetched.")
-        return data
-    except Exception as e:
-        print(f"[ERROR] ESPN scoreboard fetch failed: {e}")
-        return {}
 
 
 def fetch_espn_standings() -> dict:
@@ -283,7 +285,6 @@ def fetch_espn_standings() -> dict:
         resp.raise_for_status()
         data = resp.json()
         children = data.get("children", [])
-        conf_rank_tracker = {}  # conference -> count
         for conf_group in children:
             conf_name = conf_group.get("name", "")
             conf_abbr = "E" if "East" in conf_name else "W"
@@ -311,151 +312,88 @@ def fetch_espn_standings() -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Matching helpers
-# ---------------------------------------------------------------------------
-
-def find_polymarket_prob(pm_markets: list, home_team: str, away_team: str):
-    """
-    Try to find a Polymarket market for this matchup.
-    Returns (home_win_prob, market_question) or (None, None).
-    """
-    home_short = home_team.split()[-1]  # e.g. "Lakers"
-    away_short = away_team.split()[-1]
-
-    for m in pm_markets:
-        title = m.get("_event_title", "") or m.get("question", "")
-        home_hit = home_short.lower() in title.lower() or home_team.lower() in title.lower()
-        away_hit = away_short.lower() in title.lower() or away_team.lower() in title.lower()
-        if not (home_hit and away_hit):
-            continue
-
-        prices = m["_prices"]       # [team1_prob, team2_prob]
-        outcomes = m["_outcomes"]   # ["Team1", "Team2"]
-
-        # Find which index corresponds to home team
-        home_idx = 0
-        for i, outcome in enumerate(outcomes):
-            if home_short.lower() in outcome.lower() or home_team.lower() in outcome.lower():
-                home_idx = i
-                break
-
-        home_prob = prices[home_idx]
-        return home_prob, title
-
-    return None, None
-
-
-def parse_espn_games(scoreboard: dict, standings_map: dict) -> list:
-    """
-    Extract structured game info from ESPN scoreboard JSON.
-    Returns list of game dicts.
-    """
-    games = []
-    events = scoreboard.get("events", [])
-    for event in events:
-        try:
-            competitions = event.get("competitions", [])
-            if not competitions:
-                continue
-            comp = competitions[0]
-            competitors = comp.get("competitors", [])
-            if len(competitors) < 2:
-                continue
-
-            home_comp = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
-            away_comp = next((c for c in competitors if c.get("homeAway") == "away"), competitors[1])
-
-            home_name = home_comp.get("team", {}).get("displayName", "")
-            away_name = away_comp.get("team", {}).get("displayName", "")
-
-            # Game time in Beijing
-            date_str = event.get("date", "")
-            game_time_bj = "N/A"
-            if date_str:
-                try:
-                    dt_utc = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-                    dt_bj = dt_utc.astimezone(BEIJING_TZ)
-                    game_time_bj = dt_bj.strftime("%m/%d %H:%M")
-                except Exception:
-                    pass
-
-            home_stand = standings_map.get(home_name, {})
-            away_stand = standings_map.get(away_name, {})
-
-            games.append({
-                "home": home_name,
-                "away": away_name,
-                "game_time_bj": game_time_bj,
-                "home_wins": home_stand.get("wins", "N/A"),
-                "home_losses": home_stand.get("losses", "N/A"),
-                "home_conf": home_stand.get("conf", "?"),
-                "home_conf_rank": home_stand.get("conf_rank", 99),
-                "away_wins": away_stand.get("wins", "N/A"),
-                "away_losses": away_stand.get("losses", "N/A"),
-                "away_conf": away_stand.get("conf", "?"),
-                "away_conf_rank": away_stand.get("conf_rank", 99),
-            })
-        except Exception as e:
-            print(f"[WARN] parse_espn_games error: {e}")
-    return games
-
-
-# ---------------------------------------------------------------------------
 # Core analysis
 # ---------------------------------------------------------------------------
 
-def build_analysis_rows(espn_games: list, pinnacle_data: list, pm_markets: list) -> list:
+def build_analysis_rows(pm_markets: list, pinnacle_data: list, standings_map: dict) -> list:
     """
-    For each ESPN game, find Pinnacle odds and Polymarket price,
-    compute signals, and return a sorted list of row dicts.
+    For each Polymarket market, find Pinnacle odds and compute signals.
+    Returns a sorted list of row dicts.
     """
-    # Build Pinnacle lookup: (home_team, away_team) -> (home_odds, away_odds)
-    pinnacle_lookup = {}
+    # Build Pinnacle lookup keyed by frozenset of both team names for flexible matching
+    pinnacle_lookup = {}  # frozenset({home, away}) -> (home, away, home_odds, away_odds)
     for game in pinnacle_data:
         home_team = game.get("home_team", "")
         away_team = game.get("away_team", "")
-        bookmakers = game.get("bookmakers", [])
-        for bm in bookmakers:
+        for bm in game.get("bookmakers", []):
             if bm.get("key") != "pinnacle":
                 continue
             for market in bm.get("markets", []):
                 if market.get("key") != "h2h":
                     continue
-                outcomes = market.get("outcomes", [])
                 home_odds = away_odds = None
-                for o in outcomes:
+                for o in market.get("outcomes", []):
                     if o.get("name") == home_team:
                         home_odds = o.get("price")
                     elif o.get("name") == away_team:
                         away_odds = o.get("price")
-                if home_odds is not None and away_odds is not None:
-                    pinnacle_lookup[(home_team, away_team)] = (home_odds, away_odds)
+                if home_odds and away_odds:
+                    key = frozenset({home_team, away_team})
+                    pinnacle_lookup[key] = (home_team, away_team, home_odds, away_odds)
 
     rows = []
-    for g in espn_games:
-        home = g["home"]
-        away = g["away"]
-        home_cn = TEAM_NAMES.get(home, home)
-        away_cn = TEAM_NAMES.get(away, away)
+    for m in pm_markets:
+        outcomes = m.get("_outcomes", [])
+        prices = m.get("_prices", [])
+        if len(outcomes) < 2 or len(prices) < 2:
+            continue
 
-        # --- Pinnacle ---
-        pin_key = (home, away)
+        # Resolve short names to full names
+        t1_short = outcomes[0]  # e.g. "Mavericks"
+        t2_short = outcomes[1]  # e.g. "Bucks"
+        t1_full = SHORT_TO_FULL.get(t1_short, t1_short)
+        t2_full = SHORT_TO_FULL.get(t2_short, t2_short)
+
+        if t1_full not in TEAM_NAMES or t2_full not in TEAM_NAMES:
+            continue
+
+        # US convention: "Away vs. Home" — team1 is away, team2 is home
+        away = t1_full
+        home = t2_full
+        pm_home_prob = prices[1]   # home team win prob
+        pm_away_prob = prices[0]   # away team win prob
+
+        # Find Pinnacle odds (try to match by team names)
+        pin_home_prob = pin_away_prob = None
+        pin_key = frozenset({home, away})
         if pin_key in pinnacle_lookup:
-            home_odds, away_odds = pinnacle_lookup[pin_key]
-            pin_home_prob, pin_away_prob = remove_vig(home_odds, away_odds)
-        else:
-            # Try fuzzy match by checking if team names appear anywhere
-            pin_home_prob = pin_away_prob = None
-            for (h, a), (ho, ao) in pinnacle_lookup.items():
-                if (home.lower() in h.lower() or h.lower() in home.lower()) and \
-                   (away.lower() in a.lower() or a.lower() in away.lower()):
-                    pin_home_prob, pin_away_prob = remove_vig(ho, ao)
-                    break
+            h, a, ho, ao = pinnacle_lookup[pin_key]
+            # Align: h is the Pinnacle home team
+            if h == home:
+                pin_home_prob, pin_away_prob = remove_vig(ho, ao)
+            else:
+                pin_away_prob, pin_home_prob = remove_vig(ho, ao)
 
-        # --- Polymarket ---
-        pm_home_prob, pm_question = find_polymarket_prob(pm_markets, home, away)
+        # Game time from Polymarket gameStartTime (UTC) -> Beijing
+        game_time_bj = "待定"
+        try:
+            gs = m.get("gameStartTime", "")
+            if gs:
+                # Normalize various UTC offset formats: +00 -> +00:00, Z -> +00:00
+                gs_norm = gs.replace("Z", "+00:00")
+                import re as _re
+                gs_norm = _re.sub(r'([+-]\d{2})$', r'\1:00', gs_norm)
+                dt = datetime.fromisoformat(gs_norm)
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=timezone.utc)
+                game_time_bj = dt.astimezone(BEIJING_TZ).strftime("%m/%d %H:%M")
+        except Exception:
+            pass
 
-        # --- Gap & signals ---
+        home_cn = TEAM_NAMES[home]
+        away_cn = TEAM_NAMES[away]
+
+        # Gap & signals
         if pin_home_prob is not None and pm_home_prob is not None:
             gap = pm_home_prob - pin_home_prob
             signal = get_signal(gap)
@@ -473,32 +411,28 @@ def build_analysis_rows(espn_games: list, pinnacle_data: list, pm_markets: list)
             strategy = "N/A"
             strategy_desc = "暂无足够数据进行策略分析。"
 
-        # --- Motivation ---
-        home_wins = g["home_wins"] if g["home_wins"] != "N/A" else 0
-        home_losses = g["home_losses"] if g["home_losses"] != "N/A" else 0
-        away_wins = g["away_wins"] if g["away_wins"] != "N/A" else 0
-        away_losses = g["away_losses"] if g["away_losses"] != "N/A" else 0
+        # Standings
+        home_stand = standings_map.get(home, {})
+        away_stand = standings_map.get(away, {})
+        home_wins = home_stand.get("wins", 0)
+        home_losses = home_stand.get("losses", 0)
+        away_wins = away_stand.get("wins", 0)
+        away_losses = away_stand.get("losses", 0)
+        home_conf_rank = home_stand.get("conf_rank", 99)
+        away_conf_rank = away_stand.get("conf_rank", 99)
 
         try:
-            home_mot_level, home_mot_reason = get_motivation(
-                g["home_conf_rank"], int(home_wins), int(home_losses)
-            )
+            home_mot_level, home_mot_reason = get_motivation(home_conf_rank, home_wins, home_losses)
         except Exception:
             home_mot_level, home_mot_reason = "中", "数据缺失"
         try:
-            away_mot_level, away_mot_reason = get_motivation(
-                g["away_conf_rank"], int(away_wins), int(away_losses)
-            )
+            away_mot_level, away_mot_reason = get_motivation(away_conf_rank, away_wins, away_losses)
         except Exception:
             away_mot_level, away_mot_reason = "中", "数据缺失"
 
-        # --- Focus points ---
         focus_points = []
         if gap is not None and abs(gap) > 0.10:
-            if gap > 0:
-                focus_points.append(f"Polymarket高估{home_cn}胜率，注意市场情绪是否过热")
-            else:
-                focus_points.append(f"Polymarket低估{home_cn}胜率，存在价值机会")
+            focus_points.append(f"Polymarket{'高估' if gap > 0 else '低估'}{home_cn}胜率，注意市场{'情绪过热' if gap > 0 else '价值机会'}")
         if home_mot_level == "弱":
             focus_points.append(f"{home_cn}动机不足，警惕主队摆烂")
         if away_mot_level == "弱":
@@ -507,34 +441,21 @@ def build_analysis_rows(espn_games: list, pinnacle_data: list, pm_markets: list)
             focus_points.append("比赛数据正常，持续关注赛前盘口变化")
 
         rows.append({
-            "home": home,
-            "away": away,
-            "home_cn": home_cn,
-            "away_cn": away_cn,
-            "game_time_bj": g["game_time_bj"],
-            "pin_home_prob": pin_home_prob,
-            "pin_away_prob": pin_away_prob,
+            "home": home, "away": away,
+            "home_cn": home_cn, "away_cn": away_cn,
+            "game_time_bj": game_time_bj,
+            "pin_home_prob": pin_home_prob, "pin_away_prob": pin_away_prob,
             "pm_home_prob": pm_home_prob,
-            "pm_question": pm_question or "—",
-            "gap": gap,
-            "signal": signal,
-            "signal_class": signal_class,
-            "priority": priority,
-            "priority_key": priority_key,
-            "strategy": strategy,
-            "strategy_desc": strategy_desc,
-            "home_wins": g["home_wins"],
-            "home_losses": g["home_losses"],
-            "home_conf": g["home_conf"],
-            "home_conf_rank": g["home_conf_rank"],
-            "away_wins": g["away_wins"],
-            "away_losses": g["away_losses"],
-            "away_conf": g["away_conf"],
-            "away_conf_rank": g["away_conf_rank"],
-            "home_mot_level": home_mot_level,
-            "home_mot_reason": home_mot_reason,
-            "away_mot_level": away_mot_level,
-            "away_mot_reason": away_mot_reason,
+            "pm_question": m.get("_event_title", "—"),
+            "gap": gap, "signal": signal, "signal_class": signal_class,
+            "priority": priority, "priority_key": priority_key,
+            "strategy": strategy, "strategy_desc": strategy_desc,
+            "home_wins": home_wins, "home_losses": home_losses,
+            "home_conf": home_stand.get("conf", "?"), "home_conf_rank": home_conf_rank,
+            "away_wins": away_wins, "away_losses": away_losses,
+            "away_conf": away_stand.get("conf", "?"), "away_conf_rank": away_conf_rank,
+            "home_mot_level": home_mot_level, "home_mot_reason": home_mot_reason,
+            "away_mot_level": away_mot_level, "away_mot_reason": away_mot_reason,
             "focus_points": focus_points,
         })
 
@@ -552,7 +473,14 @@ def motivation_badge(level: str) -> str:
     return f'<span style="color:{color};font-weight:700">{level}</span>'
 
 
-def render_html(rows: list, update_time: str, today_str: str) -> str:
+def render_html(rows: list, update_time: str, today_str: str, has_pinnacle: bool = True) -> str:
+    pinnacle_banner = ""
+    if not has_pinnacle:
+        pinnacle_banner = """
+        <div class="pinnacle-banner">
+            ⚠️ Pinnacle数据未配置，请在GitHub Secrets中添加ODDS_API_KEY以启用完整分析
+        </div>"""
+
     if not rows:
         no_data_block = """
         <div class="no-data">
@@ -590,8 +518,8 @@ def render_html(rows: list, update_time: str, today_str: str) -> str:
         # Build detail cards
         cards_html = ""
         for i, r in enumerate(rows):
-            home_record = f"{r['home_wins']}胜{r['home_losses']}负" if r["home_wins"] != "N/A" else "战绩未知"
-            away_record = f"{r['away_wins']}胜{r['away_losses']}负" if r["away_wins"] != "N/A" else "战绩未知"
+            home_record = f"{r['home_wins']}胜{r['home_losses']}负"
+            away_record = f"{r['away_wins']}胜{r['away_losses']}负"
             home_rank = f"{r['home_conf']}区第{r['home_conf_rank']}名"
             away_rank = f"{r['away_conf']}区第{r['away_conf_rank']}名"
             focus_html = "".join(f"<li>{fp}</li>" for fp in r["focus_points"])
@@ -634,7 +562,7 @@ def render_html(rows: list, update_time: str, today_str: str) -> str:
                         <table class="inner-table">
                             <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
                             <tr><td>Pinnacle（去水）</td><td>{pin_home_str}</td><td>{pin_away_str}</td></tr>
-                            <tr><td>Polymarket</td><td>{pm_str}</td><td>—</td></tr>
+                            <tr><td>Polymarket</td><td class="{r['signal_class']}">{pm_str}</td><td>—</td></tr>
                             <tr><td>差值（PM－Pin）</td><td class="{r['signal_class']}">{gap_str}</td><td>—</td></tr>
                         </table>
                     </div>
@@ -716,6 +644,18 @@ def render_html(rows: list, update_time: str, today_str: str) -> str:
             color: #64748b;
             font-size: 12px;
             margin-top: 4px;
+        }}
+        /* Pinnacle banner */
+        .pinnacle-banner {{
+            background: #451a03;
+            border: 1px solid #92400e;
+            border-radius: 8px;
+            color: #fcd34d;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 16px;
+            margin-bottom: 20px;
+            text-align: center;
         }}
         /* Legend */
         .legend {{
@@ -909,6 +849,7 @@ def render_html(rows: list, update_time: str, today_str: str) -> str:
             <div class="date-line">📅 {today_str}（北京时间）</div>
             <div class="update-time">🔄 数据更新时间：{update_time}</div>
         </div>
+        {pinnacle_banner}
 
         <div class="legend">
             <span class="legend-item"><span class="signal-red">●</span> 重大偏差（差值 &gt;10%）— 优先关注</span>
@@ -966,35 +907,22 @@ def main():
         traceback.print_exc()
 
     try:
-        scoreboard = fetch_espn_scoreboard()
-    except Exception:
-        scoreboard = {}
-        traceback.print_exc()
-
-    try:
         standings_map = fetch_espn_standings()
     except Exception:
         standings_map = {}
         traceback.print_exc()
 
-    # Parse ESPN games
-    try:
-        espn_games = parse_espn_games(scoreboard, standings_map)
-        print(f"[INFO] ESPN: {len(espn_games)} games today.")
-    except Exception:
-        espn_games = []
-        traceback.print_exc()
-
     # Build analysis rows
     try:
-        rows = build_analysis_rows(espn_games, pinnacle_data, pm_markets)
+        rows = build_analysis_rows(pm_markets, pinnacle_data, standings_map)
         print(f"[INFO] Analysis complete: {len(rows)} rows.")
     except Exception:
         rows = []
         traceback.print_exc()
 
     # Generate HTML
-    html = render_html(rows, update_time, today_str)
+    has_pinnacle = bool(pinnacle_data)
+    html = render_html(rows, update_time, today_str, has_pinnacle=has_pinnacle)
 
     # Write output
     output_dir = Path("output")
