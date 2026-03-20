@@ -43,6 +43,18 @@
             font-size: 12px;
             margin-top: 4px;
         }
+        /* Pinnacle banner */
+        .pinnacle-banner {
+            background: #451a03;
+            border: 1px solid #92400e;
+            border-radius: 8px;
+            color: #fcd34d;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 16px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
         /* Legend */
         .legend {
             display: flex;
@@ -233,8 +245,9 @@
         <div class="header">
             <h1>🏀 NBA 每日分析报告</h1>
             <div class="date-line">📅 2026年03月20日（北京时间）</div>
-            <div class="update-time">🔄 数据更新时间：2026-03-20 16:51:18</div>
+            <div class="update-time">🔄 数据更新时间：2026-03-20 21:46:28</div>
         </div>
+        
 
         <div class="legend">
             <span class="legend-item"><span class="signal-red">●</span> 重大偏差（差值 &gt;10%）— 优先关注</span>
@@ -261,80 +274,480 @@
                 <tbody>
                     
             <tr onclick="toggleCard('card-0')" class="game-row">
-                <td class="td-matchup">魔术 @ 黄蜂</td>
-                <td>03/20 07:00</td>
-                <td>N/A / N/A</td>
-                <td>N/A</td>
-                <td class="td-gap">N/A</td>
-                <td><span class="signal-gray">⚫ 数据缺失</span></td>
-                <td class="td-strategy">N/A</td>
-                <td><span class="priority-0">—</span></td>
+                <td class="td-matchup">尼克斯 @ 篮网</td>
+                <td>03/21 07:30</td>
+                <td>7.6% / 92.4%</td>
+                <td>5.5%</td>
+                <td class="td-gap">-2.1%</td>
+                <td><span class="signal-green">🟢 基本一致</span></td>
+                <td class="td-strategy">策略三</td>
+                <td><span class="priority-1">★☆☆</span></td>
             </tr>
             <tr onclick="toggleCard('card-1')" class="game-row">
-                <td class="td-matchup">活塞 @ 奇才</td>
-                <td>03/20 07:00</td>
-                <td>N/A / N/A</td>
-                <td>N/A</td>
-                <td class="td-gap">N/A</td>
-                <td><span class="signal-gray">⚫ 数据缺失</span></td>
-                <td class="td-strategy">N/A</td>
-                <td><span class="priority-0">—</span></td>
+                <td class="td-matchup">勇士 @ 活塞</td>
+                <td>03/21 07:30</td>
+                <td>66.3% / 33.7%</td>
+                <td>66.5%</td>
+                <td class="td-gap">+0.2%</td>
+                <td><span class="signal-green">🟢 基本一致</span></td>
+                <td class="td-strategy">策略三</td>
+                <td><span class="priority-1">★☆☆</span></td>
             </tr>
             <tr onclick="toggleCard('card-2')" class="game-row">
-                <td class="td-matchup">湖人 @ 热火</td>
-                <td>03/20 08:00</td>
-                <td>N/A / N/A</td>
-                <td>N/A</td>
-                <td class="td-gap">N/A</td>
-                <td><span class="signal-gray">⚫ 数据缺失</span></td>
-                <td class="td-strategy">N/A</td>
-                <td><span class="priority-0">—</span></td>
+                <td class="td-matchup">老鹰 @ 火箭</td>
+                <td>03/21 08:00</td>
+                <td>58.5% / 41.5%</td>
+                <td>58.5%</td>
+                <td class="td-gap">-0.0%</td>
+                <td><span class="signal-green">🟢 基本一致</span></td>
+                <td class="td-strategy">策略三</td>
+                <td><span class="priority-1">★☆☆</span></td>
             </tr>
             <tr onclick="toggleCard('card-3')" class="game-row">
-                <td class="td-matchup">骑士 @ 公牛</td>
-                <td>03/20 08:00</td>
-                <td>N/A / N/A</td>
-                <td>N/A</td>
-                <td class="td-gap">N/A</td>
-                <td><span class="signal-gray">⚫ 数据缺失</span></td>
-                <td class="td-strategy">N/A</td>
-                <td><span class="priority-0">—</span></td>
+                <td class="td-matchup">凯尔特人 @ 灰熊</td>
+                <td>03/21 08:00</td>
+                <td>11.3% / 88.7%</td>
+                <td>9.5%</td>
+                <td class="td-gap">-1.8%</td>
+                <td><span class="signal-green">🟢 基本一致</span></td>
+                <td class="td-strategy">策略三</td>
+                <td><span class="priority-1">★☆☆</span></td>
             </tr>
             <tr onclick="toggleCard('card-4')" class="game-row">
-                <td class="td-matchup">快船 @ 鹈鹕</td>
-                <td>03/20 08:00</td>
-                <td>N/A / N/A</td>
-                <td>N/A</td>
-                <td class="td-gap">N/A</td>
-                <td><span class="signal-gray">⚫ 数据缺失</span></td>
-                <td class="td-strategy">N/A</td>
-                <td><span class="priority-0">—</span></td>
+                <td class="td-matchup">开拓者 @ 森林狼</td>
+                <td>03/21 08:00</td>
+                <td>55.8% / 44.2%</td>
+                <td>56.5%</td>
+                <td class="td-gap">+0.7%</td>
+                <td><span class="signal-green">🟢 基本一致</span></td>
+                <td class="td-strategy">策略一</td>
+                <td><span class="priority-1">★☆☆</span></td>
             </tr>
             <tr onclick="toggleCard('card-5')" class="game-row">
-                <td class="td-matchup">太阳 @ 马刺</td>
-                <td>03/20 08:00</td>
-                <td>N/A / N/A</td>
-                <td>N/A</td>
-                <td class="td-gap">N/A</td>
-                <td><span class="signal-gray">⚫ 数据缺失</span></td>
-                <td class="td-strategy">N/A</td>
-                <td><span class="priority-0">—</span></td>
+                <td class="td-matchup">猛龙 @ 掘金</td>
+                <td>03/21 09:00</td>
+                <td>70.5% / 29.5%</td>
+                <td>71.5%</td>
+                <td class="td-gap">+1.0%</td>
+                <td><span class="signal-green">🟢 基本一致</span></td>
+                <td class="td-strategy">策略三</td>
+                <td><span class="priority-1">★☆☆</span></td>
             </tr>
             <tr onclick="toggleCard('card-6')" class="game-row">
-                <td class="td-matchup">雄鹿 @ 爵士</td>
-                <td>03/20 09:00</td>
+                <td class="td-matchup">独行侠 @ 雄鹿</td>
+                <td>03/31 08:00</td>
                 <td>N/A / N/A</td>
-                <td>N/A</td>
+                <td>64.0%</td>
                 <td class="td-gap">N/A</td>
                 <td><span class="signal-gray">⚫ 数据缺失</span></td>
                 <td class="td-strategy">N/A</td>
                 <td><span class="priority-0">—</span></td>
             </tr>
             <tr onclick="toggleCard('card-7')" class="game-row">
-                <td class="td-matchup">76人 @ 国王</td>
-                <td>03/20 10:00</td>
+                <td class="td-matchup">雷霆 @ 奇才</td>
+                <td>03/22 05:00</td>
                 <td>N/A / N/A</td>
-                <td>N/A</td>
+                <td>4.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-8')" class="game-row">
+                <td class="td-matchup">热火 @ 火箭</td>
+                <td>03/22 08:00</td>
+                <td>N/A / N/A</td>
+                <td>53.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-9')" class="game-row">
+                <td class="td-matchup">湖人 @ 魔术</td>
+                <td>03/22 07:00</td>
+                <td>N/A / N/A</td>
+                <td>43.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-10')" class="game-row">
+                <td class="td-matchup">灰熊 @ 黄蜂</td>
+                <td>03/22 07:00</td>
+                <td>N/A / N/A</td>
+                <td>87.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-11')" class="game-row">
+                <td class="td-matchup">骑士 @ 鹈鹕</td>
+                <td>03/22 07:00</td>
+                <td>N/A / N/A</td>
+                <td>31.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-12')" class="game-row">
+                <td class="td-matchup">勇士 @ 老鹰</td>
+                <td>03/22 08:00</td>
+                <td>N/A / N/A</td>
+                <td>72.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-13')" class="game-row">
+                <td class="td-matchup">步行者 @ 马刺</td>
+                <td>03/22 08:00</td>
+                <td>N/A / N/A</td>
+                <td>93.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-14')" class="game-row">
+                <td class="td-matchup">快船 @ 独行侠</td>
+                <td>03/22 08:30</td>
+                <td>N/A / N/A</td>
+                <td>28.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-15')" class="game-row">
+                <td class="td-matchup">76人 @ 爵士</td>
+                <td>03/22 09:30</td>
+                <td>N/A / N/A</td>
+                <td>27.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-16')" class="game-row">
+                <td class="td-matchup">雄鹿 @ 太阳</td>
+                <td>03/22 10:00</td>
+                <td>N/A / N/A</td>
+                <td>79.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-17')" class="game-row">
+                <td class="td-matchup">篮网 @ 国王</td>
+                <td>03/23 06:00</td>
+                <td>N/A / N/A</td>
+                <td>70.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-18')" class="game-row">
+                <td class="td-matchup">奇才 @ 尼克斯</td>
+                <td>03/23 07:30</td>
+                <td>N/A / N/A</td>
+                <td>93.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-19')" class="game-row">
+                <td class="td-matchup">开拓者 @ 掘金</td>
+                <td>03/23 05:00</td>
+                <td>N/A / N/A</td>
+                <td>71.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-20')" class="game-row">
+                <td class="td-matchup">森林狼 @ 凯尔特人</td>
+                <td>03/23 08:00</td>
+                <td>N/A / N/A</td>
+                <td>72.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-21')" class="game-row">
+                <td class="td-matchup">猛龙 @ 太阳</td>
+                <td>03/23 09:00</td>
+                <td>N/A / N/A</td>
+                <td>45.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-22')" class="game-row">
+                <td class="td-matchup">灰熊 @ 老鹰</td>
+                <td>03/24 07:30</td>
+                <td>N/A / N/A</td>
+                <td>86.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-23')" class="game-row">
+                <td class="td-matchup">湖人 @ 活塞</td>
+                <td>03/24 07:00</td>
+                <td>N/A / N/A</td>
+                <td>40.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-24')" class="game-row">
+                <td class="td-matchup">步行者 @ 魔术</td>
+                <td>03/24 07:00</td>
+                <td>N/A / N/A</td>
+                <td>87.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-25')" class="game-row">
+                <td class="td-matchup">雷霆 @ 76人</td>
+                <td>03/24 07:00</td>
+                <td>N/A / N/A</td>
+                <td>12.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-26')" class="game-row">
+                <td class="td-matchup">马刺 @ 热火</td>
+                <td>03/24 07:00</td>
+                <td>N/A / N/A</td>
+                <td>29.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-27')" class="game-row">
+                <td class="td-matchup">火箭 @ 公牛</td>
+                <td>03/24 08:00</td>
+                <td>N/A / N/A</td>
+                <td>12.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-28')" class="game-row">
+                <td class="td-matchup">猛龙 @ 爵士</td>
+                <td>03/24 09:00</td>
+                <td>N/A / N/A</td>
+                <td>11.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-29')" class="game-row">
+                <td class="td-matchup">勇士 @ 独行侠</td>
+                <td>03/24 09:30</td>
+                <td>N/A / N/A</td>
+                <td>32.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-30')" class="game-row">
+                <td class="td-matchup">篮网 @ 开拓者</td>
+                <td>03/24 10:00</td>
+                <td>N/A / N/A</td>
+                <td>88.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-31')" class="game-row">
+                <td class="td-matchup">雄鹿 @ 快船</td>
+                <td>03/24 10:30</td>
+                <td>N/A / N/A</td>
+                <td>75.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-32')" class="game-row">
+                <td class="td-matchup">国王 @ 黄蜂</td>
+                <td>03/25 07:00</td>
+                <td>N/A / N/A</td>
+                <td>84.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-33')" class="game-row">
+                <td class="td-matchup">鹈鹕 @ 尼克斯</td>
+                <td>03/25 07:30</td>
+                <td>N/A / N/A</td>
+                <td>82.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-34')" class="game-row">
+                <td class="td-matchup">魔术 @ 骑士</td>
+                <td>03/25 08:00</td>
+                <td>N/A / N/A</td>
+                <td>67.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-35')" class="game-row">
+                <td class="td-matchup">掘金 @ 太阳</td>
+                <td>03/25 11:00</td>
+                <td>N/A / N/A</td>
+                <td>27.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-36')" class="game-row">
+                <td class="td-matchup">老鹰 @ 活塞</td>
+                <td>03/26 07:00</td>
+                <td>N/A / N/A</td>
+                <td>53.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-37')" class="game-row">
+                <td class="td-matchup">湖人 @ 步行者</td>
+                <td>03/26 07:00</td>
+                <td>N/A / N/A</td>
+                <td>21.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-38')" class="game-row">
+                <td class="td-matchup">公牛 @ 76人</td>
+                <td>03/26 07:00</td>
+                <td>N/A / N/A</td>
+                <td>66.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-39')" class="game-row">
+                <td class="td-matchup">雷霆 @ 凯尔特人</td>
+                <td>03/26 07:30</td>
+                <td>N/A / N/A</td>
+                <td>34.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-40')" class="game-row">
+                <td class="td-matchup">马刺 @ 灰熊</td>
+                <td>03/26 08:00</td>
+                <td>N/A / N/A</td>
+                <td>26.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-41')" class="game-row">
+                <td class="td-matchup">奇才 @ 爵士</td>
+                <td>03/26 09:00</td>
+                <td>N/A / N/A</td>
+                <td>72.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-42')" class="game-row">
+                <td class="td-matchup">独行侠 @ 掘金</td>
+                <td>03/26 10:00</td>
+                <td>N/A / N/A</td>
+                <td>83.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-43')" class="game-row">
+                <td class="td-matchup">篮网 @ 勇士</td>
+                <td>03/26 10:00</td>
+                <td>N/A / N/A</td>
+                <td>63.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-44')" class="game-row">
+                <td class="td-matchup">雄鹿 @ 开拓者</td>
+                <td>03/26 10:00</td>
+                <td>N/A / N/A</td>
+                <td>67.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-45')" class="game-row">
+                <td class="td-matchup">猛龙 @ 快船</td>
+                <td>03/26 10:30</td>
+                <td>N/A / N/A</td>
+                <td>39.0%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-46')" class="game-row">
+                <td class="td-matchup">火箭 @ 森林狼</td>
+                <td>03/26 09:30</td>
+                <td>N/A / N/A</td>
+                <td>48.5%</td>
+                <td class="td-gap">N/A</td>
+                <td><span class="signal-gray">⚫ 数据缺失</span></td>
+                <td class="td-strategy">N/A</td>
+                <td><span class="priority-0">—</span></td>
+            </tr>
+            <tr onclick="toggleCard('card-47')" class="game-row">
+                <td class="td-matchup">热火 @ 骑士</td>
+                <td>03/26 07:30</td>
+                <td>N/A / N/A</td>
+                <td>68.5%</td>
                 <td class="td-gap">N/A</td>
                 <td><span class="signal-gray">⚫ 数据缺失</span></td>
                 <td class="td-strategy">N/A</td>
@@ -346,14 +759,14 @@
         <p class="click-hint">👆 点击任意行展开/折叠详细分析</p>
         
             <div id="card-0" class="detail-card" style="display:none">
-                <div class="card-title">📊 魔术 @ 黄蜂 — 详细分析</div>
+                <div class="card-title">📊 尼克斯 @ 篮网 — 详细分析</div>
                 <div class="card-grid">
                     <div class="card-section">
                         <div class="section-title">📋 战绩 &amp; 排名</div>
                         <table class="inner-table">
-                            <tr><th></th><th>黄蜂（主）</th><th>魔术（客）</th></tr>
-                            <tr><td>战绩</td><td>36胜34负</td><td>38胜31负</td></tr>
-                            <tr><td>分区排名</td><td>E区第6名</td><td>E区第10名</td></tr>
+                            <tr><th></th><th>篮网（主）</th><th>尼克斯（客）</th></tr>
+                            <tr><td>战绩</td><td>17胜52负</td><td>45胜25负</td></tr>
+                            <tr><td>分区排名</td><td>E区第3名</td><td>E区第13名</td></tr>
                         </table>
                     </div>
                     <div class="card-section">
@@ -361,12 +774,58 @@
                         <table class="inner-table">
                             <tr><th>球队</th><th>动机</th><th>原因</th></tr>
                             <tr>
-                                <td>黄蜂</td>
+                                <td>篮网</td>
                                 <td><span style="color:#22c55e;font-weight:700">强</span></td>
                                 <td>争种子排位</td>
                             </tr>
                             <tr>
-                                <td>魔术</td>
+                                <td>尼克斯</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>7.6%</td><td>92.4%</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-green">5.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-green">-2.1%</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（策略三）</div>
+                        <p class="strategy-desc">两队实力差距明显（Pinnacle差值≥15%），尼克斯为强烈大热门。若Polymarket低估尼克斯胜率，存在冷门价值博弈机会；若高估篮网，需警惕跟风风险。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-1" class="detail-card" style="display:none">
+                <div class="card-title">📊 勇士 @ 活塞 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>活塞（主）</th><th>勇士（客）</th></tr>
+                            <tr><td>战绩</td><td>50胜19负</td><td>33胜36负</td></tr>
+                            <tr><td>分区排名</td><td>E区第15名</td><td>W区第8名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>活塞</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>勇士</td>
                                 <td><span style="color:#22c55e;font-weight:700">强</span></td>
                                 <td>争季后赛/附加赛</td>
                             </tr>
@@ -376,8 +835,238 @@
                         <div class="section-title">📈 胜率对比（主队）</div>
                         <table class="inner-table">
                             <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>66.3%</td><td>33.7%</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-green">66.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-green">+0.2%</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（策略三）</div>
+                        <p class="strategy-desc">两队实力差距明显（Pinnacle差值≥15%），活塞为强烈大热门。若Polymarket低估活塞胜率，存在冷门价值博弈机会；若高估勇士，需警惕跟风风险。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-2" class="detail-card" style="display:none">
+                <div class="card-title">📊 老鹰 @ 火箭 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>火箭（主）</th><th>老鹰（客）</th></tr>
+                            <tr><td>战绩</td><td>41胜27负</td><td>38胜31负</td></tr>
+                            <tr><td>分区排名</td><td>W区第12名</td><td>E区第9名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>火箭</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>老鹰</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>58.5%</td><td>41.5%</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-green">58.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-green">-0.0%</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（策略三）</div>
+                        <p class="strategy-desc">两队实力差距明显（Pinnacle差值≥15%），火箭为强烈大热门。若Polymarket低估火箭胜率，存在冷门价值博弈机会；若高估老鹰，需警惕跟风风险。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-3" class="detail-card" style="display:none">
+                <div class="card-title">📊 凯尔特人 @ 灰熊 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>灰熊（主）</th><th>凯尔特人（客）</th></tr>
+                            <tr><td>战绩</td><td>24胜44负</td><td>46胜23负</td></tr>
+                            <tr><td>分区排名</td><td>W区第7名</td><td>E区第14名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>灰熊</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>凯尔特人</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>11.3%</td><td>88.7%</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-green">9.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-green">-1.8%</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（策略三）</div>
+                        <p class="strategy-desc">两队实力差距明显（Pinnacle差值≥15%），凯尔特人为强烈大热门。若Polymarket低估凯尔特人胜率，存在冷门价值博弈机会；若高估灰熊，需警惕跟风风险。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-4" class="detail-card" style="display:none">
+                <div class="card-title">📊 开拓者 @ 森林狼 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>森林狼（主）</th><th>开拓者（客）</th></tr>
+                            <tr><td>战绩</td><td>43胜27负</td><td>34胜36负</td></tr>
+                            <tr><td>分区排名</td><td>W区第14名</td><td>W区第10名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>森林狼</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>开拓者</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>55.8%</td><td>44.2%</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-green">56.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-green">+0.7%</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（策略一）</div>
+                        <p class="strategy-desc">两队实力相近（Pinnacle差值<15%），比赛结果不确定性高。重点关注盘口变化与市场情绪，若Polymarket与Pinnacle偏差扩大可考虑介入。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-5" class="detail-card" style="display:none">
+                <div class="card-title">📊 猛龙 @ 掘金 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>掘金（主）</th><th>猛龙（客）</th></tr>
+                            <tr><td>战绩</td><td>42胜28负</td><td>39胜29负</td></tr>
+                            <tr><td>分区排名</td><td>W区第13名</td><td>E区第11名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>掘金</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>猛龙</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>70.5%</td><td>29.5%</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-green">71.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-green">+1.0%</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（策略三）</div>
+                        <p class="strategy-desc">两队实力差距明显（Pinnacle差值≥15%），掘金为强烈大热门。若Polymarket低估掘金胜率，存在冷门价值博弈机会；若高估猛龙，需警惕跟风风险。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-6" class="detail-card" style="display:none">
+                <div class="card-title">📊 独行侠 @ 雄鹿 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>雄鹿（主）</th><th>独行侠（客）</th></tr>
+                            <tr><td>战绩</td><td>28胜41负</td><td>23胜47负</td></tr>
+                            <tr><td>分区排名</td><td>E区第5名</td><td>W区第5名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>雄鹿</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                            <tr>
+                                <td>独行侠</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
                             <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
-                            <tr><td>Polymarket</td><td>N/A</td><td>—</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">64.0%</td><td>—</td></tr>
                             <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
                         </table>
                     </div>
@@ -391,15 +1080,15 @@
                     </div>
                 </div>
             </div>
-            <div id="card-1" class="detail-card" style="display:none">
-                <div class="card-title">📊 活塞 @ 奇才 — 详细分析</div>
+            <div id="card-7" class="detail-card" style="display:none">
+                <div class="card-title">📊 雷霆 @ 奇才 — 详细分析</div>
                 <div class="card-grid">
                     <div class="card-section">
                         <div class="section-title">📋 战绩 &amp; 排名</div>
                         <table class="inner-table">
-                            <tr><th></th><th>奇才（主）</th><th>活塞（客）</th></tr>
-                            <tr><td>战绩</td><td>16胜53负</td><td>50胜19负</td></tr>
-                            <tr><td>分区排名</td><td>E区第2名</td><td>E区第15名</td></tr>
+                            <tr><th></th><th>奇才（主）</th><th>雷霆（客）</th></tr>
+                            <tr><td>战绩</td><td>16胜53负</td><td>55胜15负</td></tr>
+                            <tr><td>分区排名</td><td>E区第2名</td><td>W区第2名</td></tr>
                         </table>
                     </div>
                     <div class="card-section">
@@ -412,9 +1101,9 @@
                                 <td>争种子排位</td>
                             </tr>
                             <tr>
-                                <td>活塞</td>
-                                <td><span style="color:#eab308;font-weight:700">中</span></td>
-                                <td>赛季边缘</td>
+                                <td>雷霆</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
                             </tr>
                         </table>
                     </div>
@@ -423,7 +1112,7 @@
                         <table class="inner-table">
                             <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
                             <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
-                            <tr><td>Polymarket</td><td>N/A</td><td>—</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">4.5%</td><td>—</td></tr>
                             <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
                         </table>
                     </div>
@@ -437,15 +1126,15 @@
                     </div>
                 </div>
             </div>
-            <div id="card-2" class="detail-card" style="display:none">
-                <div class="card-title">📊 湖人 @ 热火 — 详细分析</div>
+            <div id="card-8" class="detail-card" style="display:none">
+                <div class="card-title">📊 热火 @ 火箭 — 详细分析</div>
                 <div class="card-grid">
                     <div class="card-section">
                         <div class="section-title">📋 战绩 &amp; 排名</div>
                         <table class="inner-table">
-                            <tr><th></th><th>热火（主）</th><th>湖人（客）</th></tr>
-                            <tr><td>战绩</td><td>38胜32负</td><td>45胜25负</td></tr>
-                            <tr><td>分区排名</td><td>E区第7名</td><td>W区第15名</td></tr>
+                            <tr><th></th><th>火箭（主）</th><th>热火（客）</th></tr>
+                            <tr><td>战绩</td><td>41胜27负</td><td>38胜32负</td></tr>
+                            <tr><td>分区排名</td><td>W区第12名</td><td>E区第7名</td></tr>
                         </table>
                     </div>
                     <div class="card-section">
@@ -453,7 +1142,53 @@
                         <table class="inner-table">
                             <tr><th>球队</th><th>动机</th><th>原因</th></tr>
                             <tr>
+                                <td>火箭</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
                                 <td>热火</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">53.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-9" class="detail-card" style="display:none">
+                <div class="card-title">📊 湖人 @ 魔术 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>魔术（主）</th><th>湖人（客）</th></tr>
+                            <tr><td>战绩</td><td>38胜31负</td><td>45胜25负</td></tr>
+                            <tr><td>分区排名</td><td>E区第10名</td><td>W区第15名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>魔术</td>
                                 <td><span style="color:#22c55e;font-weight:700">强</span></td>
                                 <td>争季后赛/附加赛</td>
                             </tr>
@@ -469,7 +1204,7 @@
                         <table class="inner-table">
                             <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
                             <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
-                            <tr><td>Polymarket</td><td>N/A</td><td>—</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">43.0%</td><td>—</td></tr>
                             <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
                         </table>
                     </div>
@@ -483,15 +1218,15 @@
                     </div>
                 </div>
             </div>
-            <div id="card-3" class="detail-card" style="display:none">
-                <div class="card-title">📊 骑士 @ 公牛 — 详细分析</div>
+            <div id="card-10" class="detail-card" style="display:none">
+                <div class="card-title">📊 灰熊 @ 黄蜂 — 详细分析</div>
                 <div class="card-grid">
                     <div class="card-section">
                         <div class="section-title">📋 战绩 &amp; 排名</div>
                         <table class="inner-table">
-                            <tr><th></th><th>公牛（主）</th><th>骑士（客）</th></tr>
-                            <tr><td>战绩</td><td>28胜42负</td><td>43胜27负</td></tr>
-                            <tr><td>分区排名</td><td>E区第4名</td><td>E区第12名</td></tr>
+                            <tr><th></th><th>黄蜂（主）</th><th>灰熊（客）</th></tr>
+                            <tr><td>战绩</td><td>36胜34负</td><td>24胜44负</td></tr>
+                            <tr><td>分区排名</td><td>E区第6名</td><td>W区第7名</td></tr>
                         </table>
                     </div>
                     <div class="card-section">
@@ -499,7 +1234,53 @@
                         <table class="inner-table">
                             <tr><th>球队</th><th>动机</th><th>原因</th></tr>
                             <tr>
-                                <td>公牛</td>
+                                <td>黄蜂</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                            <tr>
+                                <td>灰熊</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">87.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-11" class="detail-card" style="display:none">
+                <div class="card-title">📊 骑士 @ 鹈鹕 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>鹈鹕（主）</th><th>骑士（客）</th></tr>
+                            <tr><td>战绩</td><td>25胜46负</td><td>43胜27负</td></tr>
+                            <tr><td>分区排名</td><td>W区第6名</td><td>E区第12名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>鹈鹕</td>
                                 <td><span style="color:#22c55e;font-weight:700">强</span></td>
                                 <td>争种子排位</td>
                             </tr>
@@ -515,7 +1296,7 @@
                         <table class="inner-table">
                             <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
                             <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
-                            <tr><td>Polymarket</td><td>N/A</td><td>—</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">31.5%</td><td>—</td></tr>
                             <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
                         </table>
                     </div>
@@ -529,15 +1310,15 @@
                     </div>
                 </div>
             </div>
-            <div id="card-4" class="detail-card" style="display:none">
-                <div class="card-title">📊 快船 @ 鹈鹕 — 详细分析</div>
+            <div id="card-12" class="detail-card" style="display:none">
+                <div class="card-title">📊 勇士 @ 老鹰 — 详细分析</div>
                 <div class="card-grid">
                     <div class="card-section">
                         <div class="section-title">📋 战绩 &amp; 排名</div>
                         <table class="inner-table">
-                            <tr><th></th><th>鹈鹕（主）</th><th>快船（客）</th></tr>
-                            <tr><td>战绩</td><td>25胜46负</td><td>34胜36负</td></tr>
-                            <tr><td>分区排名</td><td>W区第6名</td><td>W区第9名</td></tr>
+                            <tr><th></th><th>老鹰（主）</th><th>勇士（客）</th></tr>
+                            <tr><td>战绩</td><td>38胜31负</td><td>33胜36负</td></tr>
+                            <tr><td>分区排名</td><td>E区第9名</td><td>W区第8名</td></tr>
                         </table>
                     </div>
                     <div class="card-section">
@@ -545,7 +1326,99 @@
                         <table class="inner-table">
                             <tr><th>球队</th><th>动机</th><th>原因</th></tr>
                             <tr>
-                                <td>鹈鹕</td>
+                                <td>老鹰</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>勇士</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">72.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-13" class="detail-card" style="display:none">
+                <div class="card-title">📊 步行者 @ 马刺 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>马刺（主）</th><th>步行者（客）</th></tr>
+                            <tr><td>战绩</td><td>52胜18负</td><td>15胜55负</td></tr>
+                            <tr><td>分区排名</td><td>W区第1名</td><td>E区第1名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>马刺</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                            <tr>
+                                <td>步行者</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">93.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-14" class="detail-card" style="display:none">
+                <div class="card-title">📊 快船 @ 独行侠 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>独行侠（主）</th><th>快船（客）</th></tr>
+                            <tr><td>战绩</td><td>23胜47负</td><td>34胜36负</td></tr>
+                            <tr><td>分区排名</td><td>W区第5名</td><td>W区第9名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>独行侠</td>
                                 <td><span style="color:#22c55e;font-weight:700">强</span></td>
                                 <td>争种子排位</td>
                             </tr>
@@ -561,7 +1434,7 @@
                         <table class="inner-table">
                             <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
                             <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
-                            <tr><td>Polymarket</td><td>N/A</td><td>—</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">28.5%</td><td>—</td></tr>
                             <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
                         </table>
                     </div>
@@ -575,61 +1448,15 @@
                     </div>
                 </div>
             </div>
-            <div id="card-5" class="detail-card" style="display:none">
-                <div class="card-title">📊 太阳 @ 马刺 — 详细分析</div>
+            <div id="card-15" class="detail-card" style="display:none">
+                <div class="card-title">📊 76人 @ 爵士 — 详细分析</div>
                 <div class="card-grid">
                     <div class="card-section">
                         <div class="section-title">📋 战绩 &amp; 排名</div>
                         <table class="inner-table">
-                            <tr><th></th><th>马刺（主）</th><th>太阳（客）</th></tr>
-                            <tr><td>战绩</td><td>52胜18负</td><td>39胜31负</td></tr>
-                            <tr><td>分区排名</td><td>W区第1名</td><td>W区第11名</td></tr>
-                        </table>
-                    </div>
-                    <div class="card-section">
-                        <div class="section-title">💡 动机评估</div>
-                        <table class="inner-table">
-                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
-                            <tr>
-                                <td>马刺</td>
-                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
-                                <td>争种子排位</td>
-                            </tr>
-                            <tr>
-                                <td>太阳</td>
-                                <td><span style="color:#eab308;font-weight:700">中</span></td>
-                                <td>赛季边缘</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="card-section">
-                        <div class="section-title">📈 胜率对比（主队）</div>
-                        <table class="inner-table">
-                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
-                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
-                            <tr><td>Polymarket</td><td>N/A</td><td>—</td></tr>
-                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
-                        </table>
-                    </div>
-                    <div class="card-section">
-                        <div class="section-title">🎯 策略说明（N/A）</div>
-                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
-                    </div>
-                    <div class="card-section card-section-full">
-                        <div class="section-title">🔍 关注点</div>
-                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
-                    </div>
-                </div>
-            </div>
-            <div id="card-6" class="detail-card" style="display:none">
-                <div class="card-title">📊 雄鹿 @ 爵士 — 详细分析</div>
-                <div class="card-grid">
-                    <div class="card-section">
-                        <div class="section-title">📋 战绩 &amp; 排名</div>
-                        <table class="inner-table">
-                            <tr><th></th><th>爵士（主）</th><th>雄鹿（客）</th></tr>
-                            <tr><td>战绩</td><td>21胜49负</td><td>28胜41负</td></tr>
-                            <tr><td>分区排名</td><td>W区第4名</td><td>E区第5名</td></tr>
+                            <tr><th></th><th>爵士（主）</th><th>76人（客）</th></tr>
+                            <tr><td>战绩</td><td>21胜49负</td><td>38胜32负</td></tr>
+                            <tr><td>分区排名</td><td>W区第4名</td><td>E区第8名</td></tr>
                         </table>
                     </div>
                     <div class="card-section">
@@ -638,52 +1465,6 @@
                             <tr><th>球队</th><th>动机</th><th>原因</th></tr>
                             <tr>
                                 <td>爵士</td>
-                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
-                                <td>争种子排位</td>
-                            </tr>
-                            <tr>
-                                <td>雄鹿</td>
-                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
-                                <td>争种子排位</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="card-section">
-                        <div class="section-title">📈 胜率对比（主队）</div>
-                        <table class="inner-table">
-                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
-                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
-                            <tr><td>Polymarket</td><td>N/A</td><td>—</td></tr>
-                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
-                        </table>
-                    </div>
-                    <div class="card-section">
-                        <div class="section-title">🎯 策略说明（N/A）</div>
-                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
-                    </div>
-                    <div class="card-section card-section-full">
-                        <div class="section-title">🔍 关注点</div>
-                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
-                    </div>
-                </div>
-            </div>
-            <div id="card-7" class="detail-card" style="display:none">
-                <div class="card-title">📊 76人 @ 国王 — 详细分析</div>
-                <div class="card-grid">
-                    <div class="card-section">
-                        <div class="section-title">📋 战绩 &amp; 排名</div>
-                        <table class="inner-table">
-                            <tr><th></th><th>国王（主）</th><th>76人（客）</th></tr>
-                            <tr><td>战绩</td><td>18胜53负</td><td>38胜32负</td></tr>
-                            <tr><td>分区排名</td><td>W区第3名</td><td>E区第8名</td></tr>
-                        </table>
-                    </div>
-                    <div class="card-section">
-                        <div class="section-title">💡 动机评估</div>
-                        <table class="inner-table">
-                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
-                            <tr>
-                                <td>国王</td>
                                 <td><span style="color:#22c55e;font-weight:700">强</span></td>
                                 <td>争种子排位</td>
                             </tr>
@@ -699,7 +1480,1479 @@
                         <table class="inner-table">
                             <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
                             <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
-                            <tr><td>Polymarket</td><td>N/A</td><td>—</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">27.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-16" class="detail-card" style="display:none">
+                <div class="card-title">📊 雄鹿 @ 太阳 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>太阳（主）</th><th>雄鹿（客）</th></tr>
+                            <tr><td>战绩</td><td>39胜31负</td><td>28胜41负</td></tr>
+                            <tr><td>分区排名</td><td>W区第11名</td><td>E区第5名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>太阳</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>雄鹿</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">79.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-17" class="detail-card" style="display:none">
+                <div class="card-title">📊 篮网 @ 国王 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>国王（主）</th><th>篮网（客）</th></tr>
+                            <tr><td>战绩</td><td>18胜53负</td><td>17胜52负</td></tr>
+                            <tr><td>分区排名</td><td>W区第3名</td><td>E区第3名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>国王</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                            <tr>
+                                <td>篮网</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">70.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-18" class="detail-card" style="display:none">
+                <div class="card-title">📊 奇才 @ 尼克斯 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>尼克斯（主）</th><th>奇才（客）</th></tr>
+                            <tr><td>战绩</td><td>45胜25负</td><td>16胜53负</td></tr>
+                            <tr><td>分区排名</td><td>E区第13名</td><td>E区第2名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>尼克斯</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>奇才</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">93.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-19" class="detail-card" style="display:none">
+                <div class="card-title">📊 开拓者 @ 掘金 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>掘金（主）</th><th>开拓者（客）</th></tr>
+                            <tr><td>战绩</td><td>42胜28负</td><td>34胜36负</td></tr>
+                            <tr><td>分区排名</td><td>W区第13名</td><td>W区第10名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>掘金</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>开拓者</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">71.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-20" class="detail-card" style="display:none">
+                <div class="card-title">📊 森林狼 @ 凯尔特人 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>凯尔特人（主）</th><th>森林狼（客）</th></tr>
+                            <tr><td>战绩</td><td>46胜23负</td><td>43胜27负</td></tr>
+                            <tr><td>分区排名</td><td>E区第14名</td><td>W区第14名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>凯尔特人</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>森林狼</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">72.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-21" class="detail-card" style="display:none">
+                <div class="card-title">📊 猛龙 @ 太阳 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>太阳（主）</th><th>猛龙（客）</th></tr>
+                            <tr><td>战绩</td><td>39胜31负</td><td>39胜29负</td></tr>
+                            <tr><td>分区排名</td><td>W区第11名</td><td>E区第11名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>太阳</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>猛龙</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">45.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-22" class="detail-card" style="display:none">
+                <div class="card-title">📊 灰熊 @ 老鹰 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>老鹰（主）</th><th>灰熊（客）</th></tr>
+                            <tr><td>战绩</td><td>38胜31负</td><td>24胜44负</td></tr>
+                            <tr><td>分区排名</td><td>E区第9名</td><td>W区第7名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>老鹰</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>灰熊</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">86.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-23" class="detail-card" style="display:none">
+                <div class="card-title">📊 湖人 @ 活塞 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>活塞（主）</th><th>湖人（客）</th></tr>
+                            <tr><td>战绩</td><td>50胜19负</td><td>45胜25负</td></tr>
+                            <tr><td>分区排名</td><td>E区第15名</td><td>W区第15名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>活塞</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>湖人</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">40.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-24" class="detail-card" style="display:none">
+                <div class="card-title">📊 步行者 @ 魔术 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>魔术（主）</th><th>步行者（客）</th></tr>
+                            <tr><td>战绩</td><td>38胜31负</td><td>15胜55负</td></tr>
+                            <tr><td>分区排名</td><td>E区第10名</td><td>E区第1名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>魔术</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>步行者</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">87.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-25" class="detail-card" style="display:none">
+                <div class="card-title">📊 雷霆 @ 76人 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>76人（主）</th><th>雷霆（客）</th></tr>
+                            <tr><td>战绩</td><td>38胜32负</td><td>55胜15负</td></tr>
+                            <tr><td>分区排名</td><td>E区第8名</td><td>W区第2名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>76人</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>雷霆</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">12.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-26" class="detail-card" style="display:none">
+                <div class="card-title">📊 马刺 @ 热火 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>热火（主）</th><th>马刺（客）</th></tr>
+                            <tr><td>战绩</td><td>38胜32负</td><td>52胜18负</td></tr>
+                            <tr><td>分区排名</td><td>E区第7名</td><td>W区第1名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>热火</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>马刺</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">29.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-27" class="detail-card" style="display:none">
+                <div class="card-title">📊 火箭 @ 公牛 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>公牛（主）</th><th>火箭（客）</th></tr>
+                            <tr><td>战绩</td><td>28胜42负</td><td>41胜27负</td></tr>
+                            <tr><td>分区排名</td><td>E区第4名</td><td>W区第12名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>公牛</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                            <tr>
+                                <td>火箭</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">12.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-28" class="detail-card" style="display:none">
+                <div class="card-title">📊 猛龙 @ 爵士 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>爵士（主）</th><th>猛龙（客）</th></tr>
+                            <tr><td>战绩</td><td>21胜49负</td><td>39胜29负</td></tr>
+                            <tr><td>分区排名</td><td>W区第4名</td><td>E区第11名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>爵士</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                            <tr>
+                                <td>猛龙</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">11.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-29" class="detail-card" style="display:none">
+                <div class="card-title">📊 勇士 @ 独行侠 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>独行侠（主）</th><th>勇士（客）</th></tr>
+                            <tr><td>战绩</td><td>23胜47负</td><td>33胜36负</td></tr>
+                            <tr><td>分区排名</td><td>W区第5名</td><td>W区第8名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>独行侠</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                            <tr>
+                                <td>勇士</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">32.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-30" class="detail-card" style="display:none">
+                <div class="card-title">📊 篮网 @ 开拓者 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>开拓者（主）</th><th>篮网（客）</th></tr>
+                            <tr><td>战绩</td><td>34胜36负</td><td>17胜52负</td></tr>
+                            <tr><td>分区排名</td><td>W区第10名</td><td>E区第3名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>开拓者</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>篮网</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">88.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-31" class="detail-card" style="display:none">
+                <div class="card-title">📊 雄鹿 @ 快船 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>快船（主）</th><th>雄鹿（客）</th></tr>
+                            <tr><td>战绩</td><td>34胜36负</td><td>28胜41负</td></tr>
+                            <tr><td>分区排名</td><td>W区第9名</td><td>E区第5名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>快船</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>雄鹿</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">75.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-32" class="detail-card" style="display:none">
+                <div class="card-title">📊 国王 @ 黄蜂 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>黄蜂（主）</th><th>国王（客）</th></tr>
+                            <tr><td>战绩</td><td>36胜34负</td><td>18胜53负</td></tr>
+                            <tr><td>分区排名</td><td>E区第6名</td><td>W区第3名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>黄蜂</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                            <tr>
+                                <td>国王</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">84.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-33" class="detail-card" style="display:none">
+                <div class="card-title">📊 鹈鹕 @ 尼克斯 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>尼克斯（主）</th><th>鹈鹕（客）</th></tr>
+                            <tr><td>战绩</td><td>45胜25负</td><td>25胜46负</td></tr>
+                            <tr><td>分区排名</td><td>E区第13名</td><td>W区第6名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>尼克斯</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>鹈鹕</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">82.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-34" class="detail-card" style="display:none">
+                <div class="card-title">📊 魔术 @ 骑士 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>骑士（主）</th><th>魔术（客）</th></tr>
+                            <tr><td>战绩</td><td>43胜27负</td><td>38胜31负</td></tr>
+                            <tr><td>分区排名</td><td>E区第12名</td><td>E区第10名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>骑士</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>魔术</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">67.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-35" class="detail-card" style="display:none">
+                <div class="card-title">📊 掘金 @ 太阳 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>太阳（主）</th><th>掘金（客）</th></tr>
+                            <tr><td>战绩</td><td>39胜31负</td><td>42胜28负</td></tr>
+                            <tr><td>分区排名</td><td>W区第11名</td><td>W区第13名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>太阳</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>掘金</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">27.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-36" class="detail-card" style="display:none">
+                <div class="card-title">📊 老鹰 @ 活塞 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>活塞（主）</th><th>老鹰（客）</th></tr>
+                            <tr><td>战绩</td><td>50胜19负</td><td>38胜31负</td></tr>
+                            <tr><td>分区排名</td><td>E区第15名</td><td>E区第9名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>活塞</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>老鹰</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">53.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-37" class="detail-card" style="display:none">
+                <div class="card-title">📊 湖人 @ 步行者 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>步行者（主）</th><th>湖人（客）</th></tr>
+                            <tr><td>战绩</td><td>15胜55负</td><td>45胜25负</td></tr>
+                            <tr><td>分区排名</td><td>E区第1名</td><td>W区第15名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>步行者</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                            <tr>
+                                <td>湖人</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">21.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-38" class="detail-card" style="display:none">
+                <div class="card-title">📊 公牛 @ 76人 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>76人（主）</th><th>公牛（客）</th></tr>
+                            <tr><td>战绩</td><td>38胜32负</td><td>28胜42负</td></tr>
+                            <tr><td>分区排名</td><td>E区第8名</td><td>E区第4名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>76人</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>公牛</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">66.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-39" class="detail-card" style="display:none">
+                <div class="card-title">📊 雷霆 @ 凯尔特人 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>凯尔特人（主）</th><th>雷霆（客）</th></tr>
+                            <tr><td>战绩</td><td>46胜23负</td><td>55胜15负</td></tr>
+                            <tr><td>分区排名</td><td>E区第14名</td><td>W区第2名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>凯尔特人</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>雷霆</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">34.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-40" class="detail-card" style="display:none">
+                <div class="card-title">📊 马刺 @ 灰熊 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>灰熊（主）</th><th>马刺（客）</th></tr>
+                            <tr><td>战绩</td><td>24胜44负</td><td>52胜18负</td></tr>
+                            <tr><td>分区排名</td><td>W区第7名</td><td>W区第1名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>灰熊</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>马刺</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">26.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-41" class="detail-card" style="display:none">
+                <div class="card-title">📊 奇才 @ 爵士 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>爵士（主）</th><th>奇才（客）</th></tr>
+                            <tr><td>战绩</td><td>21胜49负</td><td>16胜53负</td></tr>
+                            <tr><td>分区排名</td><td>W区第4名</td><td>E区第2名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>爵士</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                            <tr>
+                                <td>奇才</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">72.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-42" class="detail-card" style="display:none">
+                <div class="card-title">📊 独行侠 @ 掘金 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>掘金（主）</th><th>独行侠（客）</th></tr>
+                            <tr><td>战绩</td><td>42胜28负</td><td>23胜47负</td></tr>
+                            <tr><td>分区排名</td><td>W区第13名</td><td>W区第5名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>掘金</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>独行侠</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">83.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-43" class="detail-card" style="display:none">
+                <div class="card-title">📊 篮网 @ 勇士 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>勇士（主）</th><th>篮网（客）</th></tr>
+                            <tr><td>战绩</td><td>33胜36负</td><td>17胜52负</td></tr>
+                            <tr><td>分区排名</td><td>W区第8名</td><td>E区第3名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>勇士</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>篮网</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">63.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-44" class="detail-card" style="display:none">
+                <div class="card-title">📊 雄鹿 @ 开拓者 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>开拓者（主）</th><th>雄鹿（客）</th></tr>
+                            <tr><td>战绩</td><td>34胜36负</td><td>28胜41负</td></tr>
+                            <tr><td>分区排名</td><td>W区第10名</td><td>E区第5名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>开拓者</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>雄鹿</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争种子排位</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">67.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-45" class="detail-card" style="display:none">
+                <div class="card-title">📊 猛龙 @ 快船 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>快船（主）</th><th>猛龙（客）</th></tr>
+                            <tr><td>战绩</td><td>34胜36负</td><td>39胜29负</td></tr>
+                            <tr><td>分区排名</td><td>W区第9名</td><td>E区第11名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>快船</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                            <tr>
+                                <td>猛龙</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">39.0%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-46" class="detail-card" style="display:none">
+                <div class="card-title">📊 火箭 @ 森林狼 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>森林狼（主）</th><th>火箭（客）</th></tr>
+                            <tr><td>战绩</td><td>43胜27负</td><td>41胜27负</td></tr>
+                            <tr><td>分区排名</td><td>W区第14名</td><td>W区第12名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>森林狼</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>火箭</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">48.5%</td><td>—</td></tr>
+                            <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">🎯 策略说明（N/A）</div>
+                        <p class="strategy-desc">暂无足够数据进行策略分析。</p>
+                    </div>
+                    <div class="card-section card-section-full">
+                        <div class="section-title">🔍 关注点</div>
+                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="card-47" class="detail-card" style="display:none">
+                <div class="card-title">📊 热火 @ 骑士 — 详细分析</div>
+                <div class="card-grid">
+                    <div class="card-section">
+                        <div class="section-title">📋 战绩 &amp; 排名</div>
+                        <table class="inner-table">
+                            <tr><th></th><th>骑士（主）</th><th>热火（客）</th></tr>
+                            <tr><td>战绩</td><td>43胜27负</td><td>38胜32负</td></tr>
+                            <tr><td>分区排名</td><td>E区第12名</td><td>E区第7名</td></tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">💡 动机评估</div>
+                        <table class="inner-table">
+                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
+                            <tr>
+                                <td>骑士</td>
+                                <td><span style="color:#eab308;font-weight:700">中</span></td>
+                                <td>赛季边缘</td>
+                            </tr>
+                            <tr>
+                                <td>热火</td>
+                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
+                                <td>争季后赛/附加赛</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-section">
+                        <div class="section-title">📈 胜率对比（主队）</div>
+                        <table class="inner-table">
+                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
+                            <tr><td>Pinnacle（去水）</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>Polymarket</td><td class="signal-gray">68.5%</td><td>—</td></tr>
                             <tr><td>差值（PM－Pin）</td><td class="signal-gray">N/A</td><td>—</td></tr>
                         </table>
                     </div>
