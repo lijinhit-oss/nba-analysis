@@ -244,8 +244,8 @@
     <div class="container">
         <div class="header">
             <h1>🏀 NBA 每日分析报告</h1>
-            <div class="date-line">📅 2026年06月10日（北京时间）</div>
-            <div class="update-time">🔄 数据更新时间：2026-06-10 19:42:14</div>
+            <div class="date-line">📅 2026年06月11日（北京时间）</div>
+            <div class="update-time">🔄 数据更新时间：2026-06-11 20:13:31</div>
         </div>
         
 
@@ -257,83 +257,13 @@
         </div>
 
         
-        <div class="table-wrapper">
-            <table class="main-table">
-                <thead>
-                    <tr>
-                        <th>比赛（中文）</th>
-                        <th>开赛时间（北京）</th>
-                        <th>Pinnacle去水胜率（主/客）</th>
-                        <th>PM当前价格（主）</th>
-                        <th>差值</th>
-                        <th>偏差信号</th>
-                        <th>策略类型</th>
-                        <th>优先级</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-            <tr onclick="toggleCard('card-0')" class="game-row">
-                <td class="td-matchup">马刺 @ 尼克斯</td>
-                <td>06/11 08:30</td>
-                <td>53.8% / 46.2%</td>
-                <td>53.5%</td>
-                <td class="td-gap">-0.3%</td>
-                <td><span class="signal-green">🟢 基本一致</span></td>
-                <td class="td-strategy">策略一</td>
-                <td><span class="priority-1">★☆☆</span></td>
-            </tr>
-                </tbody>
-            </table>
+        <div class="no-data">
+            <div class="no-data-icon">🏀</div>
+            <div class="no-data-text">今日暂无比赛数据</div>
+            <div class="no-data-sub">请明天再来查看，或手动触发工作流刷新</div>
         </div>
-        <p class="click-hint">👆 点击任意行展开/折叠详细分析</p>
         
-            <div id="card-0" class="detail-card" style="display:none">
-                <div class="card-title">📊 马刺 @ 尼克斯 — 详细分析</div>
-                <div class="card-grid">
-                    <div class="card-section">
-                        <div class="section-title">📋 战绩 &amp; 排名</div>
-                        <table class="inner-table">
-                            <tr><th></th><th>尼克斯（主）</th><th>马刺（客）</th></tr>
-                            <tr><td>战绩</td><td>53胜29负</td><td>62胜20负</td></tr>
-                            <tr><td>分区排名</td><td>E区第8名</td><td>W区第2名</td></tr>
-                        </table>
-                    </div>
-                    <div class="card-section">
-                        <div class="section-title">💡 动机评估</div>
-                        <table class="inner-table">
-                            <tr><th>球队</th><th>动机</th><th>原因</th></tr>
-                            <tr>
-                                <td>尼克斯</td>
-                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
-                                <td>争季后赛/附加赛</td>
-                            </tr>
-                            <tr>
-                                <td>马刺</td>
-                                <td><span style="color:#22c55e;font-weight:700">强</span></td>
-                                <td>争种子排位</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="card-section">
-                        <div class="section-title">📈 胜率对比（主队）</div>
-                        <table class="inner-table">
-                            <tr><th>来源</th><th>主队胜率</th><th>客队胜率</th></tr>
-                            <tr><td>Pinnacle（去水）</td><td>53.8%</td><td>46.2%</td></tr>
-                            <tr><td>Polymarket</td><td class="signal-green">53.5%</td><td>—</td></tr>
-                            <tr><td>差值（PM－Pin）</td><td class="signal-green">-0.3%</td><td>—</td></tr>
-                        </table>
-                    </div>
-                    <div class="card-section">
-                        <div class="section-title">🎯 策略说明（策略一）</div>
-                        <p class="strategy-desc">两队实力相近（Pinnacle差值<15%），比赛结果不确定性高。重点关注盘口变化与市场情绪，若Polymarket与Pinnacle偏差扩大可考虑介入。</p>
-                    </div>
-                    <div class="card-section card-section-full">
-                        <div class="section-title">🔍 关注点</div>
-                        <ul class="focus-list"><li>比赛数据正常，持续关注赛前盘口变化</li></ul>
-                    </div>
-                </div>
-            </div>
+        
 
         <div class="footer">
             <p>数据来源：TheOddsAPI (Pinnacle) · Polymarket · ESPN</p>
